@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+
+const features = [
+	{
+		title: '実践的なものづくり',
+		text: 'プロジェクト型学習で、手を動かしながら課題解決力を育てます。',
+	},
+	{
+		title: '地域とつながる学び',
+		text: '地域企業・自治体と連携し、リアルな社会課題に挑戦します。',
+	},
+	{
+		title: '未来を見据えた探究',
+		text: '情報技術とデザイン思考を横断し、次代の価値創造を目指します。',
+	},
+];
+
+const curriculum = [
+	'情報工学の基礎から応用までを体系的に学習',
+	'課題発見から発表までを行う探究型カリキュラム',
+	'チーム開発とプレゼンテーションを重視した授業',
+	'地域連携プロジェクトで実社会に触れる機会を提供',
+];
+---
+
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="神山まるごと高専の受験生向け学校紹介サイト。学びの特徴、入試導線、アクセス情報を1ページで確認できます。"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<title>神山まるごと高専 | 受験生向け案内</title>
+	</head>
+	<body>
+		<main class="container">
+			<section class="hero fade-up" aria-label="ヒーロー">
+				<span class="hero__badge">受験生向け学校紹介</span>
+				<h1>未来を、つくりながら学ぶ。神山まるごと高専</h1>
+				<p>
+					神山まるごと高専は、地域とテクノロジーをつなぐ学びの場です。
+					プロジェクト型の実践教育を通じて、これからの社会を動かす人材を育てます。
+				</p>
+				<div class="hero__actions">
+					<a class="button button--primary" href="#admissions">入試情報を見る</a>
+					<a class="button button--ghost" href="#curriculum">学びの内容を見る</a>
+				</div>
+			</section>
+
+			<section class="panel fade-up" aria-label="学校の特徴">
+				<h2>神山まるごと高専の特徴</h2>
+				<div class="features">
+					{features.map((item) => (
+						<article class="feature">
+							<h3>{item.title}</h3>
+							<p>{item.text}</p>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section id="curriculum" class="panel fade-up" aria-label="学びの内容">
+				<h2>学びの内容</h2>
+				<div class="curriculum-grid">
+					{curriculum.map((item) => (
+						<div class="curriculum-item">{item}</div>
+					))}
+				</div>
+			</section>
+
+			<section id="admissions" class="panel fade-up" aria-label="入試導線">
+				<h2>入試への導線</h2>
+				<div class="admissions">
+					<p>
+						募集要項、選抜方法、日程などの詳細は公開時に反映します。
+						現在は初版として導線を先行公開しています。
+					</p>
+					<a class="button button--primary" href="#" aria-label="入試情報ページへ">
+						入試情報（準備中）
+					</a>
+				</div>
+			</section>
+
+			<section class="panel access fade-up" aria-label="アクセス">
+				<h2>アクセス</h2>
+				<p class="access__meta">
+					住所: 徳島県名西郡神山町（正式住所は素材確定時に反映）<br />
+					交通: 最寄り交通情報を公開時に追加予定
+				</p>
+			</section>
+		</main>
+	</body>
+</html>
