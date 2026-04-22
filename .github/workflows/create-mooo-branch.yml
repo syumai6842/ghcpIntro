@@ -1,0 +1,24 @@
+name: Create mooo branch
+
+on:
+  push:
+    branches:
+      - copilot/mooo-initial-commit
+
+permissions:
+  contents: write
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create mooo branch from main's initial commit
+        run: |
+          INITIAL_COMMIT=$(git rev-list --max-parents=0 origin/main)
+          echo "Initial commit: $INITIAL_COMMIT"
+          git push origin "${INITIAL_COMMIT}:refs/heads/mooo"
