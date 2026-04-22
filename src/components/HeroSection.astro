@@ -1,0 +1,33 @@
+---
+const links = [
+  {
+    label: "公式サイト",
+    href: "https://kamiyama.ac.jp/",
+  },
+  {
+    label: "入試情報",
+    href: "https://kamiyama.ac.jp/admission/",
+  },
+  {
+    label: "学校案内",
+    href: "https://kamiyama.ac.jp/guidance/about/",
+  },
+];
+---
+
+<section class="hero section" id="top">
+  <div class="hero-gradient" aria-hidden="true"></div>
+  <p class="eyebrow">KAMIYAMA MARUGOTO KOSEN</p>
+  <h1 class="tracking-tight">テクノロジー×デザインで、<br />人間の未来を変える学校。</h1>
+  <p class="lead">
+    神山まるごと高専は、徳島県神山町から新しい学びの形を実装する高専です。
+    受験を検討する中高生に向けて、学校の特徴と学びの導線を1ページにまとめました。
+  </p>
+  <div class="button-row">
+    {
+      links.map((link) => (
+        <a href={link.href} target="_blank" rel="noreferrer" class="btn btn-primary">{link.label}</a>
+      ))
+    }
+  </div>
+</section>

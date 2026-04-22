@@ -1,0 +1,40 @@
+---
+const contacts = [
+  {
+    label: "お問い合わせ",
+    href: "https://kamiyama.ac.jp/inquiry/",
+    desc: "学校への相談・質問はこちら",
+  },
+  {
+    label: "資料請求",
+    href: "https://kamiyama.ac.jp/materials/",
+    desc: "受験検討のための資料を取り寄せる",
+  },
+  {
+    label: "公式SNS",
+    href: "https://kamiyama.ac.jp/",
+    desc: "最新情報は公式サイトとSNSから確認",
+  },
+];
+---
+
+<section class="section contact" id="contact">
+  <div class="section-head">
+    <p class="eyebrow">CONTACT</p>
+    <h2>詳しく知る</h2>
+  </div>
+  <p class="contact-lead">
+    興味を持ったら、まずは公式情報を確認してみてください。
+    入試情報や説明会情報は更新されるため、最新の案内を必ず参照するのがおすすめです。
+  </p>
+  <div class="contact-grid">
+    {
+      contacts.map((item) => (
+        <a href={item.href} target="_blank" rel="noreferrer" class="contact-card">
+          <span class="label">{item.label}</span>
+          <span class="desc">{item.desc}</span>
+        </a>
+      ))
+    }
+  </div>
+</section>

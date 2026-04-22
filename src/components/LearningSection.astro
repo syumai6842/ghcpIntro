@@ -1,0 +1,43 @@
+---
+const programs = [
+  {
+    name: "学校概要",
+    text: "学校の理念や目指す人物像を確認して、神山まるごと高専が育てたい力を把握します。",
+    href: "https://kamiyama.ac.jp/guidance/about/",
+  },
+  {
+    name: "カリキュラム",
+    text: "実践的な学びの構成を確認して、入学後の学習イメージを具体化できます。",
+    href: "https://kamiyama.ac.jp/guidance/curriculum/",
+  },
+  {
+    name: "学校生活",
+    text: "キャンパスライフや神山で学ぶ意味を知り、生活面まで含めて進学判断ができます。",
+    href: "https://kamiyama.ac.jp/school-life/",
+  },
+  {
+    name: "入試情報",
+    text: "出願方式や最新のお知らせを確認し、受験準備に必要な情報へすぐアクセスできます。",
+    href: "https://kamiyama.ac.jp/admission/",
+  },
+];
+---
+
+<section class="section" id="learning">
+  <div class="section-head">
+    <p class="eyebrow">LEARNING</p>
+    <h2>何を学べるか</h2>
+  </div>
+  <ul class="learning-list">
+    {
+      programs.map((item) => (
+        <li>
+          <a href={item.href} target="_blank" rel="noreferrer">
+            <span class="title">{item.name}</span>
+            <span class="text">{item.text}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

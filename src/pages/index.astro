@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import FeatureSection from "../components/FeatureSection.astro";
+import LearningSection from "../components/LearningSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+---
+
+<Layout>
+  <main class="page-wrap">
+    <HeroSection />
+    <FeatureSection />
+    <LearningSection />
+    <ContactSection />
+  </main>
+
+  <footer class="site-footer">
+    <p>Source: 神山まるごと高専 公式サイト（https://kamiyama.ac.jp）</p>
+    <a href="https://kamiyama.ac.jp/" target="_blank" rel="noreferrer">公式サイトを開く</a>
+  </footer>
+</Layout>

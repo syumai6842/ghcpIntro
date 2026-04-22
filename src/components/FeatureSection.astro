@@ -1,0 +1,36 @@
+---
+const features = [
+  {
+    title: "実践重視の学び",
+    description:
+      "授業内外で手を動かしながら、課題発見から制作・検証までを回す実践型の学習体験が中心です。",
+  },
+  {
+    title: "テクノロジー×デザイン",
+    description:
+      "技術だけでなく、使う人や社会の文脈を捉えるデザイン視点を組み合わせて学べる点が大きな特徴です。",
+  },
+  {
+    title: "神山をフィールドにする",
+    description:
+      "地域を学びの場にしながら、現実の課題に向き合うことで、教室内だけでは得にくい解像度を養います。",
+  },
+];
+---
+
+<section class="section" id="features">
+  <div class="section-head">
+    <p class="eyebrow">FEATURES</p>
+    <h2>学校の特徴</h2>
+  </div>
+  <div class="feature-grid">
+    {
+      features.map((feature, index) => (
+        <article class="feature-card" style={`--i:${index + 1}`}>
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
